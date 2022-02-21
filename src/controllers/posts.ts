@@ -12,7 +12,7 @@ interface Post {
 const getPosts = async (req: Request, res: Response, next: NextFunction) => {
     // get some posts
     let result: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
-    let posts: [Post] = result.data;
+    let posts: Post[] = result.data
     return res.status(200).json({
         message: posts
     });
